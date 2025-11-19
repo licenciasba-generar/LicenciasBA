@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white; 
+    color: #333;
+}
+
+/* 1. Barra Roja Superior */
+.top-bar {
+    background-color: #E74C3C; /* Rojo de la imagen */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estructura principal (Sidebar y Main Content) con Flexbox */
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* 2. Sidebar */
+.sidebar {
+    flex: 0 0 250px; /* Ancho fijo */
+    margin-right: 30px;
+}
+
+.sidebar-title {
+    color: #E74C3C;
+    border-bottom: 2px solid #EEE;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    border-bottom: 1px dashed #EEE;
+}
+
+.sidebar-nav a:hover {
+    color: #8E44AD; /* Morado/Lila */
+}
+
+.contact-block {
+    background-color: #F7F7F7; /* Fondo gris claro */
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    border-top: 5px solid #8E44AD; /* Línea morada superior */
+}
+
+/* 3. Contenido Principal */
+.main-content {
+    flex: 1;
+}
+
+h1 {
+    font-size: 28px;
+    border-bottom: 2px solid #EEE;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h2 {
+    color: #8E44AD; /* Morado para subtítulos */
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+/* Tarjetas de Pago */
+.payment-cards-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.payment-card {
+    flex: 1;
+    background-color: #F7F7F7;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.payment-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.payment-card .price {
+    font-weight: bold;
+    color: #E74C3C;
+    font-size: 18px;
+    margin: 5px 0 15px;
+}
+
+/* Botón de Descarga (Morado) */
+.download-button {
+    display: inline-block;
+    background-color: #8E44AD;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+/* ESTILOS PARA EL MODAL DE APERTURA */
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro (Overlay) */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-close-button {
+    /* El botón Cerrar está en la esquina superior derecha de la pantalla/overlay */
+    position: fixed; 
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #333; /* Fondo oscuro del botón */
+    border-radius: 4px;
+    z-index: 1001; 
+}
+
+#modal-content {
+    background-color: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    /* El borde rojo que se ve en la imagen */
+    border: 1px solid #CC3333; 
+}
+
+.sr-vecino-title {
+    color: #CC3333; /* Rojo fuerte */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #CC3333; /* Línea bajo el título */
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#modal-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#modal-content .red-link {
+    color: #CC3333; /* Enlaces en rojo */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.important-box {
+    background-color: white;
+    border: 3px solid #CC3333; /* Borde rojo exterior de la caja IMPORTANTE */
+    color: #CC3333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.important-box p {
+    color: #333; /* El texto interior del importante va en negro/gris */
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    margin: 10px 0 0 0;
+}

@@ -1,0 +1,240 @@
+/* Colores clave:
+    Azul fuerte (Header/Footer): #0077B6
+    Turquesa (Barra, Botones): #00C8C8
+    Rojo Advertencia: #D9534F
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+/* Encabezado y logo */
+.page2-header {
+    border-bottom: 1px solid #CCC;
+    position: relative; /* necesario para posicionar el logo en top-right */
+}
+
+/* Logo adicional posicionado en la esquina superior derecha */
+.top-right-logo {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    width: 120px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .top-right-logo {
+        right: 20px;
+        width: 90px;
+    }
+}
+
+.logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-area h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.header-blue-bar {
+    background-color: #0077B6; /* Azul Oscuro */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Contenido Principal centrado */
+.page2-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #CCC;
+}
+
+.title-row h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.volver-button {
+    background-color: #00C8C8; /* Turquesa */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Sección de Obtener Boleta (Barra turquesa) */
+.obtain-boleta-section {
+    background-color: #00C8C8;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-check {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Instrucciones con checks */
+.instructions-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.instructions-list li {
+    padding: 5px 0 5px 25px;
+    position: relative;
+    font-size: 14px;
+}
+
+.instructions-list .icon-check {
+    color: #00C8C8;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Formulario */
+.form-fields input,
+.form-fields select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.next-button {
+    width: 100%;
+    background-color: #00C8C8; /* Turquesa */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none; /* Para el botón que es un 'a' */
+}
+
+/* Advertencia Importante */
+.important-warning {
+    background-color: #FEEBEB; /* Fondo Rosa Claro */
+    border: 1px solid #D9534F; /* Borde Rojo */
+    color: #721C24; /* Texto Rojo Oscuro */
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.icon-warning {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #D9534F;
+}
+
+.important-warning p {
+    margin: 0;
+}
+
+/* Pie de página */
+.page2-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 12px;
+}
+
+.page2-footer p {
+    margin: 5px 0 0;
+    font-size: 10px;
+}
+
+/* Estilos para la página de RESULTADOS (boletas_generadas.html) */
+
+.boletas-info-container {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #CCC;
+}
+
+.applicant-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.applicant-data {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.download-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los dos botones */
+}
+
+.boleta-button {
+    display: block;
+    width: 250px;
+    padding: 15px 20px;
+    background-color: #00C8C8; /* Turquesa */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.boleta-button:hover {
+    background-color: #00A6A6;
+}

