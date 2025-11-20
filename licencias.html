@@ -69,10 +69,9 @@
                 e.preventDefault();
                 const nombre = document.getElementById('nombre').value;
                 const documento = document.getElementById('documento').value;
-                const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+                // No existe campo fechaNacimiento (fue eliminado)
                 localStorage.setItem('licencias_nombre', nombre);
                 localStorage.setItem('licencias_documento', documento);
-                /* Eliminada la fecha de nacimiento: no guardamos 'licencias_fechaNacimiento' */
                 window.location.href = 'boletas_generadas.html';
             });
             </script>
