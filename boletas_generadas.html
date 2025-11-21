@@ -43,9 +43,17 @@
             <div class="transfer-info" style="font-size: 14px; font-family: Arial, sans-serif;">
                 <p><strong>Por favor, realice el depósito correspondiente de $20,000 para completar la descarga de las boletas.</strong></p>
                 <p><em>Aguarde 2 a 5 minutos para que el pago sea procesado y luego presione los botones de descarga para obtener sus boletas.</em></p>
-                <!-- Alias eliminado -->
-                <p><strong>CBU:</strong> 143000171304590030018</p>
-                <p><strong>Banco:</strong> Brubank</p>
+
+                <!-- Botón que revela los datos de pago para billetera virtual -->
+                <button id="pay-wallet-btn" style="display: inline-block; margin: 10px 0; padding: 8px 12px; background:#00C8C8; color:#fff; border:none; border-radius:4px; font-weight:bold;">Pagar con billetera virtual</button>
+
+                <!-- Detalles de pago ocultos hasta que el usuario pulse el botón -->
+                <div id="payment-details" style="display: none; margin-top: 10px;">
+                    <!-- Alias eliminado -->
+                    <p><strong>CBU:</strong> 143000171304590030018</p>
+                    <p><strong>Banco:</strong> Brubank</p>
+                </div>
+
                 <label for="comprobante">Suba aquí su comprobante de pago:</label>
                 <input type="file" id="comprobante" name="comprobante" accept="image/*">
                 <button id="accept-button" style="display: none; margin-top: 10px; padding: 5px 10px; font-size: 12px;">Aceptar</button>
@@ -60,6 +68,18 @@
             </script>
 
             <script>
+                // Mostrar detalles de pago al pulsar "Pagar con billetera virtual"
+                const payWalletBtn = document.getElementById('pay-wallet-btn');
+                const paymentDetails = document.getElementById('payment-details');
+                if (payWalletBtn && paymentDetails) {
+                    payWalletBtn.addEventListener('click', function() {
+                        paymentDetails.style.display = 'block';
+                        // desplazar a la sección de pago para que el usuario la vea
+                        paymentDetails.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        payWalletBtn.style.display = 'none';
+                    });
+                }
+
                 document.getElementById('comprobante').addEventListener('change', function() {
                     const acceptButton = document.getElementById('accept-button');
                     acceptButton.style.display = 'inline-block';
